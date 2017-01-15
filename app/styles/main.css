@@ -1,0 +1,119 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font: 11pt sans-serif;
+}
+
+.ribbon-container {
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+}
+
+.ribbon, .tab-strip {
+    cursor: default;
+    -webkit-touch-callout: none; 
+      -webkit-user-select: none; 
+       -khtml-user-select: none; 
+         -moz-user-select: none; 
+          -ms-user-select: none; 
+              user-select: none;
+}
+
+.ribbon > .tab {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-top: 1px solid #aaa;
+}
+
+.ribbon .tab.selected {
+    display: flex;
+}
+
+.tab-strip {
+    list-style-type: none;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    padding: 0px;
+}
+
+.tab-strip > li {
+    cursor: pointer;
+    margin-left: 5px;
+    display: inline;
+    padding: 7px;
+}
+
+.tab-strip > li.selected {
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #fff;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.section, .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section {
+    border-right: 1px solid #aaa;
+    padding-bottom: 3px;
+}
+
+.title {
+    font-size: 10pt;
+}
+
+.title-mini {
+    font-size: 8pt;
+}
+
+.section .title {
+    align-self: center;
+}
+
+.button {
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 1px;
+    margin: 1px;
+    border: 1px solid transparent;
+}
+
+.button.center {
+    flex: 0;
+}
+
+.button:hover {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
+
+.button:active {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+}
+
+.button img {
+    display: block;
+}
+
+.column > .button {
+    flex-direction: column;
+}
+
+.row > .button {
+    flex-direction: row;
+}
