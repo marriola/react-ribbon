@@ -2,10 +2,10 @@ import React from "react";
 import Button from "components/Button";
 import { Tab, Section, Row, Column } from "components/Layout";
 
-const FileTab = <Tab title="File" />;
+const FileTab = <Tab key="fileTab" title="File" />;
 
 const HomeTab = (
-    <Tab title="Home" preselected={true}>
+    <Tab key="homeTab" title="Home" preselected={true}>
         <Section title="Navigation">
             <Column>
                 <Row>
@@ -23,7 +23,7 @@ const HomeTab = (
         </Section>
 
         <Section title="Clipboard" more={alert.bind(null, "Nothing here!")}>
-            <Column><Button icon="paste.gif" width="50" title="Paste" /></Column>
+            <Column><Button icon="paste.gif" width={50} title="Paste" /></Column>
             <Column>
                 <Row><Button icon="cut.gif" size={16} title="Cut" /></Row>
                 <Row><Button icon="copy.gif" size={16} title="Copy" /></Row>
@@ -33,9 +33,9 @@ const HomeTab = (
     </Tab>
 );
 
-const ReviewTab = <Tab title="Review" />;
+const ReviewTab = <Tab key="reviewTab" title="Review" />;
 
-const LayoutTab = <Tab title="Layout" />;
+const LayoutTab = <Tab key="layoutTab" title="Layout" />;
 
 const Tabs = [
     FileTab,
