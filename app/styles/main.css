@@ -25,6 +25,7 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     border-top: 1px solid #aaa;
+    padding-top: 5px;
 }
 
 .ribbon .tab.selected {
@@ -66,7 +67,7 @@ body {
 }
 
 .section {
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #ccc;
     padding-bottom: 3px;
 }
 
