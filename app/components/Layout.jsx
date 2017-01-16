@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "components/Button";
 
 const Tab = ({ selected, children }) => (
     <div className={"tab" + (selected ? " selected" : "")}>
@@ -12,13 +13,28 @@ class Section extends React.Component {
     }
 
     render() {
+        let moreButton, moreButtonStyle;
+
+        if (this.props.more) {
+            moreButton = (
+                <Button style="more-button center" onClick={this.props.more}>…</Button>
+            );
+
+            moreButtonStyle = "more-button";
+        }
+        
         return (
             <div className="section">
                 <div className="row">
                     { this.props.children }
                 </div>
-                <div className="row title title-mini">
-                    { this.props.title }
+
+                <div className="row">
+                    <div className={["column title title-mini", moreButtonStyle].join(" ")}>
+                        { this.props.title }
+                    </div>
+
+                    { moreButton }
                 </div>
             </div>
         );

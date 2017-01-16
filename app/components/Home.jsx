@@ -29,7 +29,7 @@ export default class Home extends React.Component {
                         </Column>
                     </Section>
 
-                    <Section title="Clipboard">
+                    <Section title="Clipboard" more={alert.bind(null, "Nothing here!")}>
                         <Column><Button icon="paste.gif" size={50} title="Paste" /></Column>
                         <Column>
                             <Row><Button icon="cut.gif" size={16} title="Cut" /></Row>

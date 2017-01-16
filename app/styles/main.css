@@ -9,6 +9,7 @@ body {
     border-bottom: 1px solid #aaa;
 }
 
+.ribbon-container
 .ribbon, .tab-strip {
     cursor: default;
     -webkit-touch-callout: none; 
@@ -19,19 +20,23 @@ body {
               user-select: none;
 }
 
+.ribbon-container
 .ribbon > .tab {
     display: none;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
     border-top: 1px solid #aaa;
-    padding-top: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
+.ribbon-container
 .ribbon .tab.selected {
     display: flex;
 }
 
+.ribbon-container
 .tab-strip {
     list-style-type: none;
     margin: 0px;
@@ -40,6 +45,7 @@ body {
     padding: 0px;
 }
 
+.ribbon-container
 .tab-strip > li {
     cursor: pointer;
     margin-left: 5px;
@@ -47,6 +53,7 @@ body {
     padding: 7px;
 }
 
+.ribbon-container
 .tab-strip > li.selected {
     border-top: 1px solid #aaa;
     border-left: 1px solid #aaa;
@@ -54,35 +61,52 @@ body {
     border-bottom: 1px solid #fff;
 }
 
+.ribbon-container
 .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+.ribbon-container
 .section, .column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.ribbon-container
 .section {
     border-right: 1px solid #ccc;
     padding-bottom: 3px;
 }
 
+.ribbon-container
+.more-button {
+    margin-left: auto !important;
+}
+
+.ribbon-container
 .title {
     font-size: 10pt;
 }
 
+.ribbon-container
+.more-button .title {
+    font-size: 8pt;
+}
+
+.ribbon-container
 .title-mini {
     font-size: 8pt;
 }
 
+.ribbon-container
 .section .title {
     align-self: center;
 }
 
+.ribbon-container
 .button {
     cursor: pointer;
     display: flex;
@@ -93,28 +117,34 @@ body {
     border: 1px solid transparent;
 }
 
+.ribbon-container
 .button.center {
     flex: 0;
 }
 
+.ribbon-container
 .button:hover {
     background-color: #ddd;
     border: 1px solid #aaa;
 }
 
+.ribbon-container
 .button:active {
     background-color: #ccc;
     border: 1px solid #aaa;
 }
 
+.ribbon-container
 .button img {
     display: block;
 }
 
+.ribbon-container
 .column > .button {
     flex-direction: column;
 }
 
+.ribbon-container
 .row > .button {
     flex-direction: row;
 }
