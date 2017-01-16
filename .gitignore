@@ -8,6 +8,8 @@
 *.swp
 *.vi
 *~
+*#
+.#*
 *.sass-cache
 
 # OS or Editor folders
