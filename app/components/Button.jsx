@@ -28,8 +28,10 @@ const Button = ({
         title = children;
     }
 
+    let classes = ["button", style, orientation];
+
     return (
-        <a className={["button", style, orientation].join(" ")}
+        <a className={classes.join(" ")}
            onClick={onClick}>
             { icon ? <img src={"images/" + icon} style={iconStyles} /> : null }
             { title ? <span className="title">{title}</span> : null }

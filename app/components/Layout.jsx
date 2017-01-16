@@ -7,66 +7,41 @@ const Tab = ({ selected, children }) => (
     </div>
 );
 
-class Section extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const Section = ({ title, more, children }) => {
+    let moreButton, moreButtonClass;
 
-    render() {
-        let moreButton, moreButtonStyle;
-
-        if (this.props.more) {
-            moreButton = (
-                <Button style="more-button center" onClick={this.props.more}>…</Button>
-            );
-
-            moreButtonStyle = "more-button";
-        }
-        
-        return (
-            <div className="section">
-                <div className="row">
-                    { this.props.children }
-                </div>
-
-                <div className="row">
-                    <div className={["column title title-mini", moreButtonStyle].join(" ")}>
-                        { this.props.title }
-                    </div>
-
-                    { moreButton }
-                </div>
-            </div>
+    if (more) {
+        moreButton = (
+            <Button style="more-button center" onClick={more}>…</Button>
         );
-    }
-}
 
-class Row extends React.Component {
-    constructor(props) {
-        super(props);
+        moreButtonClass = "more-button";
     }
+
+    let classes = [
+        "column title title-mini",
+        moreButtonClass
+    ];
     
-    render() {
-        return (
+    return (
+        <div className="section">
             <div className="row">
-                { this.props.children }
+                { children }
             </div>
-        );
-    }
-}
 
-class Column extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    
-    render() {
-        return (
-            <div className="column">
-                { this.props.children }
+            <div className="row">
+                <div className={classes.join(" ")}>
+                    { title }
+                </div>
+
+                { moreButton }
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
+
+const Row = ({ children }) => <div className="row">{ children }</div>;
+
+const Column = ({ children }) => <div className="column">{ children }</div>;
 
 export { Tab, Section, Row, Column };
