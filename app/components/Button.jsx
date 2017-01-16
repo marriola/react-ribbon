@@ -9,16 +9,25 @@ const Button = ({
     children,
     onClick
 }) => {
+    let maxWidth, maxHeight;
+    
     if (size) {
         width = height = size;
     }
 
-    let iconStyles = { width, height };
+    if (width && !height) {
+        maxHeight = "100%";
+    }
+    else if (height && !width) {
+        maxWidth = "100%";
+    }
+
+    let iconStyles = { width, height, maxWidth, maxHeight };
 
     if (!title && children) {
         title = children;
     }
-    
+
     return (
         <a className={["button", style, orientation].join(" ")}
            onClick={onClick}>

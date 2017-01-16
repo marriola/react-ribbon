@@ -23,7 +23,7 @@ const HomeTab = (
         </Section>
 
         <Section title="Clipboard" more={alert.bind(null, "Nothing here!")}>
-            <Column><Button icon="paste.gif" size={50} title="Paste" /></Column>
+            <Column><Button icon="paste.gif" width="50" title="Paste" /></Column>
             <Column>
                 <Row><Button icon="cut.gif" size={16} title="Cut" /></Row>
                 <Row><Button icon="copy.gif" size={16} title="Copy" /></Row>
