@@ -8,6 +8,6 @@ exports.files = {
 exports.plugins = {
     babel: {
         presets: ['es2015', 'es2017', 'react'],
-        plugins: ['transform-decorators-legacy', 'transform-class-properties']
+        plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread']
     }    
 };
