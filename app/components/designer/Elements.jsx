@@ -3,12 +3,34 @@ import { Section, Row, Column } from "components/Layout";
 import Button from "components/Button";
 
 function cloneArray(arr) {
-    return arr.map(x => arr.clone());
+    return arr.map(x => x.clone());
+}
+
+function slug(text) {
+    return text
+        .toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^a-zA-Z0-9]/g, "");
+}
+
+function propsToString(props) {
+    let keys = Object.getOwnPropertyNames(props);
+    let propTexts = [];
+
+    for (let key of keys) {
+        let value = props[key];
+
+        if (key != "children" && key != "type" && value) {
+            propTexts.push(nullable(key, value));
+        }
+    }
+
+    return propTexts.join(" ");
 }
 
 function nullable(name, value) {
     if (value) {
-        return `${name}=${value}`;
+        return `${name}="${value}"`;
     }
     else {
         return "";
@@ -65,7 +87,7 @@ class SectionElement extends Element {
         let { title, children = [] } = this.props;
         children = children.map(x => "\n  " + x.toString()).join("");
         
-        return `<Section ${nullable("title", title)}>${children}\n</Section>`;
+        return `<Section ${propsToString(this.props)}>${children}\n</Section>`;
     }
 }
 
@@ -88,7 +110,9 @@ class RowElement extends Element {
     }
 
     clone() {
-        return cloneArray(this.props.children);
+        let { children = [] } = this.props;
+        
+        return cloneArray(children);
     }
 }
 
@@ -134,13 +158,13 @@ class ButtonElement extends Element {
 
     toElement() {
         let { title, icon } = this.props;
-        return <Button title={title} icon={icon} />;
+        return <Button key={slug(title)} title={title} icon={icon} />;
     }
 
     toString() {
         let { title, icon } = this.props;
         
-        return `<Button ${nullable("title", title)} ${nullable("icon", icon)} />`;
+        return `<Button ${propsToString(this.props)} />`;
     }
 }
 

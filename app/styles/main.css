@@ -112,6 +112,8 @@ body {
 .ribbon-container
 .section .title {
     align-self: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .ribbon-container

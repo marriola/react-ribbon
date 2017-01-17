@@ -2,10 +2,16 @@ import React from "react";
 import Button from "components/Button";
 import { Tab, Section, Row, Column } from "components/Layout";
 
+const GITHUB_REPO_URL = "https://github.com/marriola/react-ribbon";
+
 const FileTab = <Tab key="fileTab" title="File" />;
 
 const HomeTab = (
     <Tab key="homeTab" title="Home" preselected={true}>
+        <Section title="Github Repo">
+            <Button style="center" icon="github.gif" size={48} href={GITHUB_REPO_URL} />
+        </Section>
+        
         <Section title="Navigation">
             <Column>
                 <Row>

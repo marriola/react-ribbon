@@ -3,6 +3,7 @@ import React from "react";
 const Button = ({
     style,
     title,
+    href,
     icon,
     size, width, height,
     orientation,
@@ -22,7 +23,12 @@ const Button = ({
         maxWidth = "100%";
     }
 
-    let iconStyles = { width, height, maxWidth, maxHeight };
+    let iconStyles = {
+        width,
+        height,
+        maxWidth,
+        maxHeight
+    };
 
     if (!title && children) {
         title = children;
@@ -32,7 +38,9 @@ const Button = ({
 
     return (
         <a className={classes.join(" ")}
-           onClick={onClick}>
+           onClick={onClick}
+           href={href}
+           target={href ? "_blank" : ""} >
             { icon ? <img src={"images/" + icon} style={iconStyles} /> : null }
             { title ? <span className="title">{title}</span> : null }
         </a>

@@ -35,12 +35,6 @@ export default class Home extends React.Component {
                 </Ribbon>
 
                 <div style={{ padding: "5px" }}>
-                    <div style={{ float: "right" }}>
-                        <a href="https://github.com/marriola/react-ribbon">
-                            Repo
-                        </a>
-                    </div>
-                    
                     <Designer newTab={ this.newTab } />
                 </div>                
             </div>
